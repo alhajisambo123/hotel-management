@@ -14,7 +14,7 @@ const Home = async () => {
       <PageSearch />
       <FeaturedRoom featuredRoom={featuredRoom} />
       <Gallery />
-      <NewsLetter />
+      {/* <NewsLetter /> */}
     </>
   );
 };

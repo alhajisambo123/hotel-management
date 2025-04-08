@@ -1,9 +1,10 @@
 import { defineField } from "sanity";
 
 const roomTypes = [
-  { title: "Basic", value: "basic" },
-  { title: "Luxury", value: "luxury" },
-  { title: "Suite", value: "suite" },
+  { title: "Humanities", value: "humanities" },
+  { title: "Engineering", value: "engineering" },
+  { title: "Basic/Applied", value: "basic/applied" },
+  { title: "Health", value: "health" },
 ];
 
 const hotelRoom = {
@@ -89,12 +90,21 @@ const hotelRoom = {
       type: "text",
       validation: (Rule) => Rule.required(),
       initialValue:
-        "Check-in time is 12:00 PM, checkout time is 11:59 AM. If you leave behind any items, please contact the receptionist.",
+        "Please make sure you report to us incase you are facing any challenge with any of our tutors",
     }),
     defineField({
-      name: "dimension",
-      title: "Dimension",
-      type: "string",
+      name: "mysession",
+      title: "my session",
+      type: "text",
+      validation: (Rule) =>
+        Rule.required().min(100).error("Minimum 100 Characters"),
+    }),
+    defineField({
+      name: "contact",
+      title: "my contact",
+      type: "text",
+      validation: (Rule) =>
+        Rule.required().min(100).error("Minimum 100 Characters"),
     }),
     defineField({
       name: "numberOfBeds",
@@ -104,18 +114,11 @@ const hotelRoom = {
       initialValue: 1,
     }),
     defineField({
-      name: "offeredAmenities",
-      title: "Offered Amenities",
-      type: "array",
-      of: [
-        {
-          type: "object",
-          fields: [
-            { name: "icon", title: "Icon", type: "string" },
-            { name: "amenity", title: "Amenity", type: "string" },
-          ],
-        },
-      ],
+      name: "experience",
+      title: "experience",
+      type: "text",
+      validation: (Rule) =>
+        Rule.required().min(1000).error("Minimum 1000 Characters"),
     }),
     defineField({
       name: "isBooked",

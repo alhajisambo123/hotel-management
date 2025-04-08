@@ -41,7 +41,7 @@ const FeaturedRoom: FC<Props> = (props) => {
       </div>
 
       <div className="md:py-10 md:w-1/2 text-left">
-        <h3 className="font-heading mb-12">Featured Room</h3>
+        <h3 className="font-heading mb-12">Featured Tutors 1</h3>
 
         <p className="font-normal max-w-md">{featuredRoom.description}</p>
 

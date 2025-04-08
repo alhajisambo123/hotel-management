@@ -22,6 +22,12 @@ export type Room = {
   _id: string;
   coverImage: CoverImage;
   description: string;
+  mysession: string;
+  experience: string;
+
+  aboutme: string;
+  contact: string;
+
   dimension: string;
   discount: number;
   images: Image[];
