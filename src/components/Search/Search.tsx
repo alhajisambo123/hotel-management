@@ -35,7 +35,7 @@ const Search: FC<Props> = ({
       <div className="container mx-auto flex gap-4 flex-wrap justify-between items-center">
         <div className="w-full md:1/3 lg:w-auto mb-4 md:mb-0">
           <label className="block text-sm font-medium mb-2 text-black">
-            Room Type
+            Tutor Type
           </label>
           <div className="relative">
             <select
@@ -44,9 +44,11 @@ const Search: FC<Props> = ({
               className="w-full px-4 py-2 capitalize rounded leading-tight dark:bg-black focus:outline-none"
             >
               <option value="All">All</option>
-              <option value="Basic">Basic</option>
-              <option value="Luxury">Luxury</option>
-              <option value="Suite">Suite</option>
+              <option value="Humanities">Humanities</option>
+
+              <option value="Engineering">Engineering</option>
+              <option value="B/A">Basic/Applied</option>
+              <option value="Health">Health</option>
             </select>
           </div>
         </div>
