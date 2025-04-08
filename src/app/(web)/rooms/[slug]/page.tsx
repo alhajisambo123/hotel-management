@@ -15,6 +15,7 @@ import HotelPhotoGallery from "@/components/HotelPhotoGallery/HotelPhotoGallery"
 import BookRoomCta from "@/components/BookRoomCta/BookRoomCta";
 import toast from "react-hot-toast";
 import RoomReview from "@/components/RoomReview/RoomReview";
+import { FaWhatsapp } from "react-icons/fa"; // Import WhatsApp icon
 
 type RoomDetailsProps = {
   params: Promise<{ slug: string }>;
@@ -123,9 +124,9 @@ const RoomDetails: React.FC<RoomDetailsProps> = ({ params }) => {
   if (isLoading || isPending) return <LoadingSpinner />;
   if (error) {
     console.error("Error fetching room data:", error);
-    return <p>Error: Unable to fetch room details.</p>;
+    return <p>Error: Unable to fetch tutor details.</p>;
   }
-  if (!room) return <p>No room data available.</p>;
+  if (!room) return <p>No tutor data available.</p>;
 
   return (
     <div>
@@ -136,7 +137,7 @@ const RoomDetails: React.FC<RoomDetailsProps> = ({ params }) => {
           <div className="md:col-span-8 md:w-full">
             <div>
               <h2 className="font-bold text-left text-lg md:text-2xl">
-                {room.name} ({room.dimension})
+                {room.name}
               </h2>
               <div className="flex my-11">
                 {room.offeredAmenities.map((amenity) => (
@@ -152,28 +153,26 @@ const RoomDetails: React.FC<RoomDetailsProps> = ({ params }) => {
                 ))}
               </div>
               <div className="mb-11">
-                <h2 className="font-bold text-3xl mb-2">Description</h2>
+                <h2 className="font-bold text-3xl mb-2">About Me</h2>
                 <p>{room.description}</p>
               </div>
+
               <div className="mb-11">
-                <h2 className="font-bold text-3xl mb-2">Offered Amenities</h2>
-                <div className="grid grid-cols-2">
-                  {room.offeredAmenities.map((amenity) => (
-                    <div
-                      key={amenity._key}
-                      className="flex items-center md:my-0 my-1"
-                    >
-                      <i className={`fa-solid ${amenity.icon}`}></i>
-                      <p className="text-xs md:text-base ml-2">
-                        {amenity.amenity}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+                <h2 className="font-bold text-3xl mb-2">About My Session</h2>
+                <p>{room.mysession}</p>
+              </div>
+
+              <div className="mb-11">
+                <h2 className="font-bold text-3xl mb-2">Experience</h2>
+                <p>{room.experience}</p>
               </div>
               <div className="mb-11">
-                <h2 className="font-bold text-3xl mb-2">Safety And Hygiene</h2>
-                <div className="grid grid-cols-2">
+                <h2 className="font-bold text-3xl mb-2">Contact me</h2>
+                <p>{room.contact}</p>
+              </div>
+              <div className="mb-11">
+                {/* <h2 className="font-bold text-3xl mb-2">Experience</h2> */}
+                {/* <div className="grid grid-cols-2">
                   <div className="flex items-center my-1 md:my-0">
                     <MdOutlineCleaningServices />
                     <p className="ml-2 md:text-base text-xs">Daily Cleaning</p>
@@ -194,7 +193,7 @@ const RoomDetails: React.FC<RoomDetailsProps> = ({ params }) => {
                     <GiSmokeBomb />
                     <p className="ml-2 md:text-base text-xs">Smoke Detectors</p>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               <div className="shadow dark:shadow-white rounded-lg p-6">
@@ -208,24 +207,10 @@ const RoomDetails: React.FC<RoomDetailsProps> = ({ params }) => {
             </div>
           </div>
 
-          <div className="md:col-span-4 rounded-xl shadow-lg dark:shadow dark:shadow-white sticky top-10 h-fit overflow-auto">
-            <BookRoomCta
-              discount={room.discount}
-              price={room.price}
-              specialNote={room.specialNote}
-              checkinDate={checkinDate}
-              setCheckinDate={setCheckinDate}
-              checkoutDate={checkoutDate}
-              setCheckoutDate={setCheckoutDate}
-              calcMinCheckoutDate={calcMinCheckoutDate}
-              adults={adults}
-              noOfChildren={noOfChildren}
-              setAdults={setAdults}
-              setNoOfChildren={setNoOfChildren}
-              isBooked={room.isBooked}
-              handleBookNowClick={handleBookNowClick}
-            />
-          </div>
+          {/* { <div className="md:col-span-4 rounded-xl shadow-lg dark:shadow dark:shadow-white sticky top-10 h-fit overflow-auto">
+
+
+          </div> } */}
         </div>
       </div>
     </div>
