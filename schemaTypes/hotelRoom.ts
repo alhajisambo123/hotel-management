@@ -103,7 +103,8 @@ const hotelRoom = {
       name: "contact",
       title: "Contact",
       type: "text",
-      validation: (Rule) => Rule.required(),
+      validation: (Rule) =>         Rule.required().max(50).error("Minimum 100 Characters"),
+
     }),
     defineField({
       name: "numberOfBeds",
