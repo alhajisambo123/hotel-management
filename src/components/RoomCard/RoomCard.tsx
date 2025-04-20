@@ -28,10 +28,10 @@ const RoomCard: FC<Props> = (props) => {
       <div className="p-4 bg-white">
         <div className="flex justify-between text-xl font-semibold">
           <p>{name}</p>
-          <p>$ {price}</p>
+          <p>GH₵ {price}</p>
         </div>
 
-        <p className="pt-2 text-xs">{type} Room</p>
+        <p className="pt-2 text-xs">{type} Tutor</p>
 
         <p className="pt-3 pb-6">{description.slice(1, 100)}...</p>
 
@@ -47,3 +47,4 @@ const RoomCard: FC<Props> = (props) => {
 };
 
 export default RoomCard;
+
