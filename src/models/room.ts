@@ -22,7 +22,7 @@ export type Room = {
   _id: string;
   coverImage: CoverImage;
   description: string;
-  mysession: string;
+  decshin: string;
   experience: string;
 
   aboutme: string;
