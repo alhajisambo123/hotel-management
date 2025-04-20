@@ -1,7 +1,6 @@
 
 import Link from "next/link";
 import {
-  BsFillSendFill,
   BsTelephoneOutbound,
   BsFacebook,
   BsTwitter,
