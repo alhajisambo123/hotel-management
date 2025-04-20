@@ -16,8 +16,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Hotel Management App",
-  description: "Discover the best hotel rooms",
+  title: "Student Tutor Finder",
+  description:
+    "Connect with student tutors for academic support and personal lessons",
 };
 
 export default function RootLayout({
