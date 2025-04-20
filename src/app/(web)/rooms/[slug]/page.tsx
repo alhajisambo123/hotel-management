@@ -1,13 +1,10 @@
 "use client";
 
-import React, { useState, useEffect, useTransition } from "react";
+import React, { useState } from "react";
 import useSWR from "swr";
 
-
 import { getRoom } from "@/libs/apis";
-import LoadingSpinner from "../../loading";
 import HotelPhotoGallery from "@/components/HotelPhotoGallery/HotelPhotoGallery";
-import toast from "react-hot-toast";
 import RoomReview from "@/components/RoomReview/RoomReview";
 
 type RoomDetailsProps = {
@@ -16,25 +13,6 @@ type RoomDetailsProps = {
 
 const RoomDetails: React.FC<RoomDetailsProps> = ({ params }) => {
   const [slug, setSlug] = useState<string | null>(null);
-  const [checkinDate, setCheckinDate] = useState<Date | null>(null);
-  const [checkoutDate, setCheckoutDate] = useState<Date | null>(null);
-  const [adults, setAdults] = useState(1);
-  const [noOfChildren, setNoOfChildren] = useState(0);
-  const [isPending, startTransition] = useTransition();
-
-  useEffect(() => {
-    startTransition(() => {
-      params
-        .then((resolvedParams) => {
-          console.log("Resolved Params:", resolvedParams);
-          setSlug(resolvedParams.slug);
-        })
-        .catch((error) => {
-          console.error("Error resolving params:", error);
-          toast.error("Failed to load room details.");
-        });
-    });
-  }, [params]);
 
   const fetchRoom = async () => {
     if (!slug) return null;
@@ -48,30 +26,11 @@ const RoomDetails: React.FC<RoomDetailsProps> = ({ params }) => {
     }
   };
 
-  const {
-    data: room,
-    error,
-    isLoading,
-  } = useSWR(slug ? `/api/rooms/${slug}` : null, fetchRoom);
+  const { data: room, error } = useSWR(
+    slug ? `/api/rooms/${slug}` : null,
+    fetchRoom
+  );
 
-  const calcMinCheckoutDate = () => {
-    if (checkinDate) {
-      const nextDay = new Date(checkinDate);
-      nextDay.setDate(nextDay.getDate() + 1);
-      return nextDay;
-    }
-    return null;
-  };
-
-  const calcNumDays = () => {
-    if (!checkinDate || !checkoutDate) return 0;
-    const timeDiff = checkoutDate.getTime() - checkinDate.getTime();
-    return Math.ceil(timeDiff / (24 * 60 * 60 * 1000));
-  };
-
-  
-
-  if (isLoading || isPending) return <LoadingSpinner />;
   if (error) {
     console.error("Error fetching room data:", error);
     return <p>Error: Unable to fetch tutor details.</p>;
@@ -108,9 +67,7 @@ const RoomDetails: React.FC<RoomDetailsProps> = ({ params }) => {
                 <h2 className="font-bold text-3xl mb-2">Contact me</h2>
                 <p>{room.contact}</p>
               </div>
-              <div className="mb-11">
-
-              </div>
+              <div className="mb-11"></div>
 
               <div className="shadow dark:shadow-white rounded-lg p-6">
                 <div className="items-center mb-4">
@@ -122,8 +79,6 @@ const RoomDetails: React.FC<RoomDetailsProps> = ({ params }) => {
               </div>
             </div>
           </div>
-
-        
         </div>
       </div>
     </div>
