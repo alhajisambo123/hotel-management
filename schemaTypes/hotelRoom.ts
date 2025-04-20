@@ -111,8 +111,6 @@ const hotelRoom = {
       name: "experience",
       title: "Experience",
       type: "text",
-      validation: (Rule) =>
-        Rule.required().min(100).error("Minimum 100 Characters"),
     }),
     defineField({
       name: "isBooked",
