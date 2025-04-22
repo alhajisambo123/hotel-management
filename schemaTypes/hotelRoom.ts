@@ -4,6 +4,8 @@ const roomTypes = [
   { title: "Humanities", value: "Humanities" },
   { title: "Engineering", value: "Engineering" },
   { title: "Basic/Applied", value: "Basic/Applied" },
+    { title: "All", value: "All" },
+
   { title: "Health", value: "Health" },
 ];
 
