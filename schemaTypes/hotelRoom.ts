@@ -3,7 +3,7 @@ import { defineField } from "sanity";
 const roomTypes = [
   { title: "Humanities", value: "Humanities" },
   { title: "Engineering", value: "Engineering" },
-  { title: "Basic/Applied", value: "Basic/A" },
+  { title: "Basic/Applied", value: "Basic/Applied" },
   { title: "Health", value: "Health" },
 ];
 
