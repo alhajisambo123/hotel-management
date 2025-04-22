@@ -47,7 +47,7 @@ const Search: FC<Props> = ({
               <option value="Humanities">Humanities</option>
 
               <option value="Engineering">Engineering</option>
-              <option value="B/A">Basic/Applied</option>
+              <option value="Basic/Applied">Basic/Applied</option>
               <option value="Health">Health</option>
             </select>
           </div>
