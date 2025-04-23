@@ -7,19 +7,15 @@ const AboutPage = () => {
     <main className="min-h-screen py-16 px-6 md:px-20 bg-white text-gray-900">
       <section className="max-w-5xl mx-auto">
         <h1 className="text-4xl font-bold mb-6 text-primary">About Us</h1>
-        <p className="text-lg leading-relaxed mb-8">
-          Welcome to{" "}
-          <span className="font-semibold text-text-primary">Agenda</span> —
-          your trusted student-to-student tutoring platform based right on the
-          University of Ghana campus.
-          <br />
-          <br />
-          Our mission is simple: to connect students with skilled peer tutors
-          who understand the coursework, campus life, and the challenges that
-          come with both. Whether you're struggling with a tough class or want
-          to help others succeed, Agenda is the bridge between support and
-          success.
-        </p>
+     <p className="text-lg leading-relaxed mb-8">
+  Welcome to <span className="font-semibold text-tertiary-dark">Agenda</span> — your trusted student-to-student
+  tutoring platform based right on the University of Ghana campus.
+  <br />
+  <br />
+  Our mission is simple: to connect students with skilled peer tutors who understand the coursework, campus life,
+  and the challenges that come with both. Whether you&rsquo;re struggling with a tough class or want to help others
+  succeed, Agenda is the bridge between support and success.
+</p>
 
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <div>
