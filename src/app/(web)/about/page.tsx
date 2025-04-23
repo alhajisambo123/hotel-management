@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 
 const AboutPage = () => {
@@ -10,7 +9,7 @@ const AboutPage = () => {
         <h1 className="text-4xl font-bold mb-6 text-primary">About Us</h1>
         <p className="text-lg leading-relaxed mb-8">
           Welcome to{" "}
-          <span className="font-semibold text-tertiary-dark">Agenda</span> —
+          <span className="font-semibold text-text-primary">Agenda</span> —
           your trusted student-to-student tutoring platform based right on the
           University of Ghana campus.
           <br />
