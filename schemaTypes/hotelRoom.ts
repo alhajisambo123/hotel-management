@@ -1,10 +1,12 @@
 import { defineField } from "sanity";
 
 const roomTypes = [
-  { title: "Humanities", value: "humanities" },
-  { title: "Engineering", value: "engineering" },
-  { title: "Basic/Applied", value: "basic/applied" },
-  { title: "Health", value: "health" },
+  { title: "Humanities", value: "Humanities" },
+  { title: "Engineering", value: "Engineering" },
+  { title: "Basic/Applied", value: "Basic/Applied" },
+  { title: "All", value: "All" },
+
+  { title: "Health", value: "Health" },
 ];
 
 const hotelRoom = {
@@ -31,8 +33,6 @@ const hotelRoom = {
       name: "description",
       title: "Description",
       type: "text",
-      validation: (Rule) =>
-        Rule.required().min(100).error("Minimum 100 Characters"),
     }),
     defineField({
       name: "price",
@@ -93,18 +93,18 @@ const hotelRoom = {
         "Please make sure you report to us incase you are facing any challenge with any of our tutors",
     }),
     defineField({
-      name: "mysession",
-      title: "my session",
+      name: "decshin",
+      title: "Decshin",
       type: "text",
       validation: (Rule) =>
-        Rule.required().min(100).error("Minimum 100 Characters"),
+        Rule.required().min(100).error("Minimum 1000 Characters"),
     }),
     defineField({
       name: "contact",
-      title: "my contact",
+      title: "Contact",
       type: "text",
       validation: (Rule) =>
-        Rule.required().min(100).error("Minimum 100 Characters"),
+        Rule.required().max(20).error("Minimum 100 Characters"),
     }),
     defineField({
       name: "numberOfBeds",
@@ -115,10 +115,9 @@ const hotelRoom = {
     }),
     defineField({
       name: "experience",
-      title: "experience",
+      title: "Experience",
       type: "text",
-      validation: (Rule) =>
-        Rule.required().min(1000).error("Minimum 1000 Characters"),
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "isBooked",

@@ -41,7 +41,7 @@ const FeaturedRoom: FC<Props> = (props) => {
       </div>
 
       <div className="md:py-10 md:w-1/2 text-left">
-        <h3 className="font-heading mb-12">Featured Tutors 1</h3>
+        <h3 className="font-heading mb-12">Featured Tutor</h3>
 
         <p className="font-normal max-w-md">{featuredRoom.description}</p>
 
@@ -50,13 +50,13 @@ const FeaturedRoom: FC<Props> = (props) => {
             <div className="flex gap-3 flex-col items-center justify-center mr-4">
               <p className="text-xs lg:text-xl text-center">Start From</p>
               <p className="md:font-bold flex font-medium text-lg xl:text-5xl">
-                $ {featuredRoom.price}
+                GHS {featuredRoom.price}
               </p>
             </div>
             <div className="flex gap-3 flex-col items-center justify-center mr-4">
               <p className="text-xs lg:text-xl text-center">Discount</p>
               <p className="md:font-bold flex font-medium text-lg xl:text-5xl">
-                $ {featuredRoom.discount}
+                GHS {featuredRoom.discount}
               </p>
             </div>
           </div>
