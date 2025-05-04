@@ -74,3 +74,4 @@ const FeaturedRoom: FC<Props> = (props) => {
 };
 
 export default FeaturedRoom;
+

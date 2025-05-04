@@ -2,9 +2,17 @@
 
 import React, { useState } from "react";
 import useSWR from "swr";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6547483bb94ce11cd7aaf303db1b20c05ad21a7b
 
 import { getRoom } from "@/libs/apis";
 import HotelPhotoGallery from "@/components/HotelPhotoGallery/HotelPhotoGallery";
+<<<<<<< HEAD
+=======
+import toast from "react-hot-toast";
+>>>>>>> 6547483bb94ce11cd7aaf303db1b20c05ad21a7b
 import RoomReview from "@/components/RoomReview/RoomReview";
 
 type RoomDetailsProps = {
@@ -13,6 +21,25 @@ type RoomDetailsProps = {
 
 const RoomDetails: React.FC<RoomDetailsProps> = ({ params }) => {
   const [slug, setSlug] = useState<string | null>(null);
+<<<<<<< HEAD
+=======
+  
+  const [isPending, startTransition] = useTransition();
+
+  useEffect(() => {
+    startTransition(() => {
+      params
+        .then((resolvedParams) => {
+          console.log("Resolved Params:", resolvedParams);
+          setSlug(resolvedParams.slug);
+        })
+        .catch((error) => {
+          console.error("Error resolving params:", error);
+          toast.error("Failed to load room details.");
+        });
+    });
+  }, [params]);
+>>>>>>> 6547483bb94ce11cd7aaf303db1b20c05ad21a7b
 
   const fetchRoom = async () => {
     if (!slug) return null;
@@ -31,6 +58,16 @@ const RoomDetails: React.FC<RoomDetailsProps> = ({ params }) => {
     fetchRoom
   );
 
+<<<<<<< HEAD
+=======
+ 
+
+  
+
+
+
+  if (isLoading || isPending) return <LoadingSpinner />;
+>>>>>>> 6547483bb94ce11cd7aaf303db1b20c05ad21a7b
   if (error) {
     console.error("Error fetching room data:", error);
     return <p>Error: Unable to fetch tutor details.</p>;
@@ -66,6 +103,12 @@ const RoomDetails: React.FC<RoomDetailsProps> = ({ params }) => {
               <div className="mb-11">
                 <h2 className="font-bold text-3xl mb-2">Contact me</h2>
                 <p>{room.contact}</p>
+<<<<<<< HEAD
+=======
+              </div>
+              <div className="mb-11">
+
+>>>>>>> 6547483bb94ce11cd7aaf303db1b20c05ad21a7b
               </div>
               <div className="mb-11"></div>
 
@@ -79,6 +122,11 @@ const RoomDetails: React.FC<RoomDetailsProps> = ({ params }) => {
               </div>
             </div>
           </div>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 6547483bb94ce11cd7aaf303db1b20c05ad21a7b
         </div>
       </div>
     </div>

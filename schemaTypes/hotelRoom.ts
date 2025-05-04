@@ -38,8 +38,6 @@ const hotelRoom = {
       name: "price",
       title: "Price",
       type: "number",
-      validation: (Rule) =>
-        Rule.required().min(100).error("Minimum 100 Characters"),
     }),
     defineField({
       name: "discount",
@@ -96,15 +94,11 @@ const hotelRoom = {
       name: "decshin",
       title: "Decshin",
       type: "text",
-      validation: (Rule) =>
-        Rule.required().min(100).error("Minimum 1000 Characters"),
     }),
     defineField({
       name: "contact",
       title: "Contact",
       type: "text",
-      validation: (Rule) =>
-        Rule.required().max(20).error("Minimum 100 Characters"),
     }),
     defineField({
       name: "numberOfBeds",
@@ -117,7 +111,6 @@ const hotelRoom = {
       name: "experience",
       title: "Experience",
       type: "text",
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "isBooked",
