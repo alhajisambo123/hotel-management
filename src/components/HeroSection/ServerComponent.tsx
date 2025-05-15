@@ -9,7 +9,7 @@ export const heading1 = (
       learning.
     </p>
     <Link href="/rooms">
-      <button className="btn-primary">Get Started</button>
+      <button className="btn-secondary">Get Started</button>
     </Link>
   </>
 );

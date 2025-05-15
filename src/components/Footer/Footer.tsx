@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import {
   BsTelephoneOutbound,
@@ -11,7 +10,7 @@ import { BiMessageDetail } from "react-icons/bi";
 
 const Footer = () => {
   return (
-    <footer className="mt-16 bg-tertiary-light">
+    <footer className="mt-16 bg-primary">
       <div className="container mx-auto px-4 py-10">
         <Link href="/" className="font-black text-tertiary-dark text-2xl">
           Agenda

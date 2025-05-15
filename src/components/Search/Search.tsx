@@ -31,7 +31,7 @@ const Search: FC<Props> = ({
   };
 
   return (
-    <section className="bg-tertiary-light px-4 py-6 rounded-lg">
+    <section className="bg-primary px-4 py-6 rounded-lg">
       <div className="container mx-auto flex gap-4 flex-wrap justify-between items-center">
         <div className="w-full md:1/3 lg:w-auto mb-4 md:mb-0">
           <label className="block text-sm font-medium mb-2 text-black">
@@ -53,27 +53,28 @@ const Search: FC<Props> = ({
           </div>
         </div>
 
-        <div className="w-full md:1/3 lg:w-auto mb-4 md:mb-0">
-          <label className="block text-sm font-medium mb-2 text-black">
+        <div className="w-full md:1/3 lg:w-auto mb-4 md:mb-0  ">
+          <label className="block text-sm font-medium mb-2 text-black   ">
             Search
           </label>
           <input
             type="search"
             id="search"
             placeholder="Search..."
-            className="w-full px-4 py-3 rounded leading-tight dark:bg-black focus:outline-none placeholder:text-black dark:placeholder:text-white"
+            className=" px-4 py-3 rounded leading-tight dark:bg-black focus:outline-none placeholder:text-black dark:placeholder:text-white "
             value={searchQuery}
             onChange={handleSearchQueryChange}
           />
         </div>
 
-        <button
-          className="btn-primary"
+        {/* <button
+          className="px-4 py-3 bg-white rounded   dark:bg-black focus:outline-none placeholder:text-black dark:placeholder:text-white"
           type="button"
           onClick={handleFilterClick}
         >
           Search
-        </button>
+        </button> */}
+        <button className="btn-primary">Search</button>
       </div>
     </section>
   );
