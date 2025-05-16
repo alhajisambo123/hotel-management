@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { ChangeEvent, FC } from "react";
 
 type Props = {
@@ -16,7 +16,7 @@ const Search: FC<Props> = ({
   setRoomTypeFilter,
   setSearchQuery,
 }) => {
-  const router = useRouter();
+  // const router = useRouter();
 
   const handleRoomTypeChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setRoomTypeFilter(event.target.value);
