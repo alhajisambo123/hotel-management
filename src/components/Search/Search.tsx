@@ -1,6 +1,6 @@
 "use client";
 
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { ChangeEvent, FC } from "react";
 
 type Props = {
@@ -16,7 +16,7 @@ const Search: FC<Props> = ({
   setRoomTypeFilter,
   setSearchQuery,
 }) => {
-  // const router = useRouter();
+  const router = useRouter();
 
   const handleRoomTypeChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setRoomTypeFilter(event.target.value);
@@ -26,9 +26,9 @@ const Search: FC<Props> = ({
     setSearchQuery(event.target.value);
   };
 
-  // const handleFilterClick = () => {
-  //   router.push(`/rooms?roomType=${roomTypeFilter}&searchQuery=${searchQuery}`);
-  // };
+  const handleFilterClick = () => {
+    router.push(`/rooms?roomType=${roomTypeFilter}&searchQuery=${searchQuery}`);
+  };
 
   return (
     <section className="bg-primary px-4 py-6 rounded-lg">
@@ -67,14 +67,13 @@ const Search: FC<Props> = ({
           />
         </div>
 
-        {/* <button
+        <button
           className="px-4 py-3 bg-white rounded   dark:bg-black focus:outline-none placeholder:text-black dark:placeholder:text-white"
           type="button"
           onClick={handleFilterClick}
         >
           Search
-        </button> */}
-        <button className="btn-primary">Search</button>
+        </button>
       </div>
     </section>
   );
