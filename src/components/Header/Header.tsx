@@ -2,17 +2,17 @@
 
 import Link from "next/link";
 import { useContext } from "react";
-import { FaUserCircle } from "react-icons/fa";
+// import { FaUserCircle } from "react-icons/fa";
 import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
-import { useSession } from "next-auth/react";
+// import { useSession } from "next-auth/react";
 
 import ThemeContext from "@/context/themeContext";
-import Image from "next/image";
+// import Image from "next/image";
 
 const Header = () => {
   const { darkTheme, setDarkTheme } = useContext(ThemeContext);
 
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
 
   return (
     <header className="sticky top-0 z-50 py-10 px-4 container mx-auto text-xl flex flex-wrap md:flex-nowrap items-center justify-between transition-all duration-300 bg-white">

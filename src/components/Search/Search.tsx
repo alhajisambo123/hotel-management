@@ -26,9 +26,9 @@ const Search: FC<Props> = ({
     setSearchQuery(event.target.value);
   };
 
-  const handleFilterClick = () => {
-    router.push(`/rooms?roomType=${roomTypeFilter}&searchQuery=${searchQuery}`);
-  };
+  // const handleFilterClick = () => {
+  //   router.push(`/rooms?roomType=${roomTypeFilter}&searchQuery=${searchQuery}`);
+  // };
 
   return (
     <section className="bg-primary px-4 py-6 rounded-lg">
