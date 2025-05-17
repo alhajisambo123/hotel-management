@@ -15,7 +15,7 @@ const Header = () => {
   // const { data: session } = useSession();
 
   return (
-    <header className="sticky top-0 z-50 py-10 px-4  w-[90%] mx-auto  text-xl flex flex-wrap md:flex-nowrap items-center justify-between transition-all duration-300 bg-white dark:bg-black">
+    <header className="sticky top-0 z-50 py-10 px-4  container mx-auto  text-xl flex flex-wrap md:flex-nowrap items-center justify-between transition-all duration-300 bg-white dark:bg-black">
       <div className="flex items-center w-full md:2/3">
         <Link href="/" className="font-black text-tertiary-dark">
           Agenda
