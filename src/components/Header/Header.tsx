@@ -73,16 +73,16 @@ const Header = () => {
         <li className="hover:-translate-y-2 duration-500 transition-all">
           <Link href="/rooms">Tutors</Link>
         </li>
-        <li className="hover:-translate-y-2 duration-500 transition-all">
+        {/* <li className="hover:-translate-y-2 duration-500 transition-all">
           <Link href="/about">About us</Link>
-        </li>
+        </li> */}
         <li className="hover:-translate-y-2 duration-500 transition-all">
           <Link href="/about">Become a Tutor</Link>
         </li>
 
-        <li className="hover:-translate-y-2 duration-500 transition-all">
+        {/* <li className="hover:-translate-y-2 duration-500 transition-all">
           <Link href="/about">How it works</Link>
-        </li>
+        </li> */}
       </ul>
     </header>
   );
