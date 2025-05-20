@@ -106,10 +106,28 @@ const Header = () => {
     <header className="sticky top-0 z-50 py-6 px-4 container mx-auto text-xl bg-white dark:bg-black transition-all duration-300">
       <div className="flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="font-black text-tertiary-dark text-2xl">
-          Agenda
-        </Link>
-
+        <div className="flex items-center gap-4">
+          <Link href="/" className="font-black text-tertiary-dark text-2xl">
+            Agenda
+          </Link>
+          {darkTheme ? (
+            <MdOutlineLightMode
+              className="cursor-pointer text-2xl"
+              onClick={() => {
+                setDarkTheme(false);
+                localStorage.removeItem("hotel-theme");
+              }}
+            />
+          ) : (
+            <MdDarkMode
+              className="cursor-pointer text-2xl"
+              onClick={() => {
+                setDarkTheme(true);
+                localStorage.setItem("hotel-theme", "true");
+              }}
+            />
+          )}
+        </div>
         {/* Desktop Nav */}
         <ul className="hidden md:flex items-center gap-6 font-bold btn-primary">
           <li className="hover:-translate-y-2 duration-500 transition-all">
@@ -121,28 +139,13 @@ const Header = () => {
           <li className="hover:-translate-y-2 duration-500 transition-all">
             <Link href="/about">Become a Tutor</Link>
           </li>
+          <li className="hover:-translate-y-2 duration-500 transition-all">
+            <Link href="/about">How it works</Link>
+          </li>
         </ul>
 
         {/* Right Icons */}
         <div className="flex items-center gap-4 md:hidden">
-          {darkTheme ? (
-            <MdOutlineLightMode
-              className="cursor-pointer"
-              onClick={() => {
-                setDarkTheme(false);
-                localStorage.removeItem("hotel-theme");
-              }}
-            />
-          ) : (
-            <MdDarkMode
-              className="cursor-pointer"
-              onClick={() => {
-                setDarkTheme(true);
-                localStorage.setItem("hotel-theme", "true");
-              }}
-            />
-          )}
-
           {/* Hamburger Button */}
           <button onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -159,9 +162,23 @@ const Header = () => {
           <Link href="/rooms" onClick={() => setMenuOpen(false)}>
             Tutors
           </Link>
-          <Link href="/about" onClick={() => setMenuOpen(false)}>
+          <Link href="/becomeatutor" onClick={() => setMenuOpen(false)}>
             Become a Tutor
           </Link>
+
+          <Link href="/about" onClick={() => setMenuOpen(false)}>
+            About us
+          </Link>
+          {/* <li className="hover:-translate-y-2 duration-500 transition-all">
+            <Link href="/about">About us</Link>
+          </li> */}
+
+          {/* <li className="hover:-translate-y-2 duration-500 transition-all">
+            <Link href="/about">Become a Tutor</Link>
+          </li> */}
+          {/* <li className="hover:-translate-y-2 duration-500 transition-all">
+            <Link href="/about">How it works</Link>
+          </li> */}
         </div>
       )}
     </header>
