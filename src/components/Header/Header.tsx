@@ -94,7 +94,7 @@
 
 import Link from "next/link";
 import { useContext, useState } from "react";
-import { FaUserCircle, FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import { MdDarkMode, MdOutlineLightMode } from "react-icons/md";
 import ThemeContext from "@/context/themeContext";
 
