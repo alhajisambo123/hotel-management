@@ -18,7 +18,7 @@ const user = {
     defineField({
       name: "name",
       title: "Name",
-      type: "string",
+      type: "text",
       description: "Name of the user",
       validation: (Rule) => Rule.required(),
     }),
