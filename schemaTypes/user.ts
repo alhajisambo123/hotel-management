@@ -20,7 +20,6 @@ const user = {
       title: "Name",
       type: "string",
       description: "Name of the user",
-      readOnly: true,
       validation: (Rule) => Rule.required(),
     }),
     defineField({
